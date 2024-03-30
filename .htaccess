@@ -1,0 +1,26 @@
+# Enable Rewrite Engine
+RewriteEngine On
+
+# Rewrite base URL to index.php
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ index.php?$1 [L,QSA]
+RewriteRule ^about$ page-about.php [L]
+
+# Prevent access to sensitive files
+#<FilesMatch "(^\.|\.php)">
+#    Order allow,deny
+#    Deny from all
+#</FilesMatch>
+
+# Set PHP options
+php_flag display_errors on
+php_flag register_globals off
+php_flag magic_quotes_gpc off
+
+# Set default index file
+DirectoryIndex index.php index.html
+
+# Set maximum upload size
+php_value upload_max_filesize 20M
+php_value post_max_size 20M

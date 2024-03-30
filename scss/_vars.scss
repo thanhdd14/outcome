@@ -1,0 +1,118 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+$font-jp : 'Noto Sans JP', sans-serif;
+
+
+@mixin font-fm($fmValue, $fwValue) {
+	font-family: ($fmValue);
+	font-weight: ($fwValue);
+}
+
+
+@mixin font-size($sizeValue) {
+	font-size: ($sizeValue) + px;
+}
+@function vw($element-size) {
+	$vwSize: ($element-size / 1024) * 100;
+	@return #{$vwSize}vw;
+}
+
+
+@mixin ob {
+	object-fit: cover;
+	font-family: 'object-fit: cover';
+}
+
+
+@mixin palt {
+	font-feature-settings: "palt" 1;
+}
+
+
+
+
+@mixin fts($fts, $lin: 24) {
+	$rem: $fts / 10;
+	$linS: $lin / $fts;
+	font-size: #{$rem}rem;
+	line-height: $linS;
+}
+
+
+
+@mixin v-align {
+	top: 50%;
+	-webkit-transform: translateY(-50%);
+	   -moz-transform: translateY(-50%);
+	    -ms-transform: translateY(-50%);
+	     -o-transform: translateY(-50%);
+	        transform: translateY(-50%);
+}
+
+@mixin h-align {
+	left: 50%;
+	-webkit-transform: translateX(-50%);
+	   -moz-transform: translateX(-50%);
+	    -ms-transform: translateX(-50%);
+	     -o-transform: translateX(-50%);
+	        transform: translateX(-50%);
+}
+
+@mixin v-h-align {
+	left: 50%;
+	top: 50%;
+	-webkit-transform: translate(-50%, -50%);
+	   -moz-transform: translate(-50%, -50%);
+	    -ms-transform: translate(-50%, -50%);
+	     -o-transform: translate(-50%, -50%);
+	        transform: translate(-50%, -50%);
+}
+
+@mixin smooth-transition {
+	-webkit-backface-visibility: hidden;
+	-webkit-transition: all .3s ease;
+	   -moz-transition: all .3s ease;
+	    -ms-transition: all .3s ease;
+	     -o-transition: all .3s ease;
+	        transition: all .3s ease;
+}
+
+
+
+/* ====================================================
+Media Quary
+==================================================== */
+@mixin mq($breakpoint: md) {
+	@media #{map-get($breakpoints, $breakpoint)} {
+		@content;
+	}
+}
+
+$breakpoint-sm: 640px !default;
+$breakpoint-md: 768px !default;
+$breakpoint-lg: 990px !default;
+
+$breakpoints: (
+		'xs': 'screen and (max-width: 374px)',
+		'sm': 'screen and (max-width: 640px)',
+		'md': 'screen and (max-width: 834px)',
+		'lg': 'screen and (max-width: 990px)',
+		'ipd': 'screen and (max-width: 1024px)',
+		'xl': 'screen and (max-width: 1245px)',
+		'lp': 'screen and (max-width: 1440px)',
+		'mac': 'screen and (max-width: 1770px)',
+		'xs-min': 'screen and (min-width: 375px)',
+		'sm-min': 'screen and (min-width: 641px)',
+		'md-min': 'screen and (min-width: 835px)',
+		'lg-min': 'screen and (min-width: 991px)',
+		'ipd-min': 'screen and (min-width: 1025px)',
+		'xl-min': 'screen and (min-width: 1246px)',
+) !default;
+
+.mb0{
+	margin-bottom: 0 !important;
+}
+
+
+

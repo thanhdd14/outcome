@@ -1,0 +1,23 @@
+{
+	"version": 2,
+
+	"settings": {
+		"appearanceTools": true,
+		"layout": {
+			"contentSize": "840px",
+			"wideSize": "1240px"
+	},
+		"spacing": {
+			"margin": true,
+			"padding": true,
+			"blockGap": null,
+			"units": [ "px", "em", "rem", "vh", "vw" ]
+		}
+	},
+
+	"styles": {},
+
+	"customTemplates": {},
+
+	"templateParts": {}
+}

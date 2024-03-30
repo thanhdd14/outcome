@@ -1,0 +1,20 @@
+.this.file.is.ONLY.for.admin.pages { }
+
+.acf-fields > .acf-field.acf-caution-message {
+	background-color: #fff4f4;
+	border-bottom: 5px solid #cc0000;
+}
+.acf-fields > .acf-field.acf-caution-message .acf-label label {
+	color: #cc0000;
+	font-size: 21pt;
+	text-align: center;
+}
+.acf-fields > .acf-field.acf-caution-message .acf-input p {
+	color: #cc0000;
+	font-size: 14pt;
+	text-align: center;
+}
+
+.wp-list-table.pages #page-slug {
+	width: 120px;
+}

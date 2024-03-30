@@ -35,6 +35,27 @@ function google_maps_callback() {
 
 
 //oc-theme
+var window_type;
+var $window = $(window);
+if ($window.width() <= 768) {
+    window_type = 'sp';
+} else {
+    window_type = 'pc';
+}
+$(window).resize(function() {
+    if($window.width() <= 768){
+        if( (window_type != 'sp') ){
+            location.reload();
+        }
+    }else{
+        if(window_type != 'pc'){
+            location.reload();
+        }
+    }
+});
+
+
+
 $('.js-mobile').on('click', function(){
 	$(this).toggleClass("js-mobile--close");
 	$("html").toggleClass("js-locked");
@@ -43,11 +64,22 @@ $('.js-mobile').on('click', function(){
 
 $(function () {
 	$(window).on('load resize', function () {
-		if($(window).width()>767){
+		if($(window).width()>768){
 		
 		}
 		else{
 			$('.header-nav__menu-arrow').on('click', function(){
+				$(this).toggleClass("active");
+				$(this).next("ul").slideToggle();
+			});
+			$(".js-customer-list").slick({
+				slidesToShow: 1,
+				slidesToScroll: 1,
+				autoplay: false,
+				centerMode: true,
+				infinite: false,
+			});
+			$('.footer-menu__ttl').on('click', function(){
 				$(this).toggleClass("active");
 				$(this).next("ul").slideToggle();
 			});
@@ -58,13 +90,6 @@ $(function () {
 
 jQuery(function ($) {
 	$('.customer-list .customer-list__item .customer-list__ct .customer-list__ct-ttl').matchHeight();
+	$('.customer-list .customer-list__item .customer-list__ct').matchHeight();
 });
-$(".js-partner-logo").slick({
-	slidesToShow: 1,
-	slidesToScroll: 1,
-	autoplay: true,
-	// autoplaySpeed: 0,
-	speed: 7000,
-	// variableWidth: true,
-	infinite: true,
-});
+

@@ -96,7 +96,7 @@ $breakpoint-lg: 990px !default;
 $breakpoints: (
 		'xs': 'screen and (max-width: 374px)',
 		'sm': 'screen and (max-width: 640px)',
-		'md': 'screen and (max-width: 834px)',
+		'md': 'screen and (max-width: 768px)',
 		'lg': 'screen and (max-width: 990px)',
 		'ipd': 'screen and (max-width: 1024px)',
 		'xl': 'screen and (max-width: 1245px)',
@@ -104,7 +104,7 @@ $breakpoints: (
 		'mac': 'screen and (max-width: 1770px)',
 		'xs-min': 'screen and (min-width: 375px)',
 		'sm-min': 'screen and (min-width: 641px)',
-		'md-min': 'screen and (min-width: 835px)',
+		'md-min': 'screen and (min-width: 769px)',
 		'lg-min': 'screen and (min-width: 991px)',
 		'ipd-min': 'screen and (min-width: 1025px)',
 		'xl-min': 'screen and (min-width: 1246px)',

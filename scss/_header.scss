@@ -8,7 +8,7 @@
 	background: white;
 	z-index: 999;
 	padding: 40px 0;
-	@include mq(){
+	@include mq(ipd){
 		box-shadow: 0 0 10px 0 rgba(black,0.1);
 		padding: 16px 0;
 	}
@@ -24,6 +24,9 @@
 		width: 231px;
 		position: relative;
 		z-index: 999;
+		@media only screen and (min-width: 1025px) and (max-width: 1230px) {
+			width: 150px;
+		}
 		@include mq(){
 			width: 115px;
 		}
@@ -36,7 +39,7 @@
 		border-radius: 3px;
 		color: white;
 		padding: 8px 17px;
-		@include mq(){
+		@include mq(ipd){
 			@include font-size(15);
 			color: #242422;
 			background: none;
@@ -96,6 +99,9 @@
 				align-items: center;
 				position: relative;
 				padding: 0 19px;
+				@media only screen and (min-width: 1025px) and (max-width: 1230px) {
+					padding: 0 14px;
+				}
 				@include mq(ipd){
 					display: block;
 					padding: 0;
